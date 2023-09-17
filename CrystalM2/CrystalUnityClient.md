@@ -10,6 +10,10 @@ CrystalUnityClient是使用Unity开发的Mir客户端
 3. 符合手机,触摸屏的操作方式,非PC端的缩小版
 
 
+https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/d51f0bec-1c62-403c-98ed-0a5b867a43bf
+
+
+
 ![image](https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/234af8b9-777e-4848-a3ed-a973136edcce)
 
 ## 更新日志
