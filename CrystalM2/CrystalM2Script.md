@@ -320,11 +320,11 @@ function 每日变量(){
 
 #### 查看及修改
 
-货币分为多种,支持有:金币,元宝,珍珠,其范围为0:~uint.Max
+货币分为多种,支持有:金币,元宝,珍珠,其范围为
 
-- CurrencyType.GOLD
-- CurrencyType.CREDIT
-- CurrencyType.PEARLS
+- CurrencyType.GOLD   0~uint.max
+- CurrencyType.CREDIT 0~uint.max
+- CurrencyType.PEARLS 0~int.max
 
 但改变的数量为 `负数(-)`, 则减少, 正数为增加
 
