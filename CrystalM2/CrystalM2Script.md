@@ -4,7 +4,8 @@ CrystalM2的脚本系统
 ## 触发与特效
 在技能开始和命中时, 脚本中播放额外的特效动画
 
-![image](https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/234af8b9-777e-4848-a3ed-a973136edcce)
+https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/d51f0bec-1c62-403c-98ed-0a5b867a43bf
+
 
 
 ### 技能触发
