@@ -3,7 +3,7 @@
 CrystalM2的脚本系统
 ## 触发与特效
 
-### 技能触发
+#### 技能触发
 
 远程技能的开始和命中,并播放特效动画
 
@@ -32,6 +32,53 @@ function QFunction$MagicAttack(magic,target) {
 ```
 
 https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/d51f0bec-1c62-403c-98ed-0a5b867a43bf
+
+#### 登录触发
+#### 使用物品
+#### 升级触发
+#### 穿戴触发
+#### 拾取触发
+#### 近战攻击命中
+#### 调用其他JavsScript文件
+
+```javascript
+
+function QFunction$Login() {
+    return say;
+}
+
+
+function QFunction$UseItem() {
+    return 双击触发$双击触发$Main(arguments[0],arguments[1],arguments[2],arguments[3]);
+}
+
+
+
+function QFunction$LevelUP() {
+    var say = '恭喜 ,{'+ctx.Name+'#Red} \r\n';
+    say += '升级到 ,{'+ctx.Level+'#Green} \r\n';
+    say += '<传送/@QFunction$QF界面()>\r\n';
+    return say;
+}
+
+
+
+function QFunction$Equipment() {
+    return 穿戴触发$穿戴触发$Main(arguments[0],arguments[1],arguments[2],arguments[3]);
+}
+
+
+
+function QFunction$PickUp() {
+    return 拾取触发$拾取触发$Main(arguments[0],arguments[1],arguments[2],arguments[3]);
+}
+
+
+function QFunction$Attack() {
+    var say = 'Attack  \r\n';
+    return say;
+}
+```
 
 
 ## 物品
