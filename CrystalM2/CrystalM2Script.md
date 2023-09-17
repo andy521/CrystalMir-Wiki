@@ -2,15 +2,11 @@
 
 CrystalM2的脚本系统
 ## 触发与特效
-在技能开始和命中时, 脚本中播放额外的特效动画
-
-https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/d51f0bec-1c62-403c-98ed-0a5b867a43bf
-
-
 
 ### 技能触发
 
-#### 远程技能的开始和命中
+远程技能的开始和命中,并播放特效动画
+
 ```javascript
 function QFunction$MagicBegin(magic) {
 
@@ -35,7 +31,7 @@ function QFunction$MagicAttack(magic,target) {
 
 ```
 
-
+https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/d51f0bec-1c62-403c-98ed-0a5b867a43bf
 
 
 ## 物品
