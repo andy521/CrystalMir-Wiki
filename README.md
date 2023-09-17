@@ -10,7 +10,7 @@ Wiki地址: [https://github.com/CrystalMir2/CrystalMir-Wiki/wiki](https://github
 
 一个基于Crystal,客户端为`Unity3D`重写的版本
 
-更多内容见: [./CrystalM2.md](https://github.com/CrystalMir2/CrystalMir-Wiki/blob/main/CrystalM2.md)
+更多内容见: [./CrystalM2/CrystalM2.md](https://github.com/CrystalMir2/CrystalMir-Wiki/blob/main/CrystalM2/CrystalM2.md)
 
 
 ### 水晶
