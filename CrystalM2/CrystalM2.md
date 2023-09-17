@@ -1,4 +1,4 @@
-### CrystalM2
+# CrystalM2
 
 CrystalM2简称CM2, 是一个用于制作MMORPG的游戏引擎,基于Crystal的2022年5月份的代码二次开发
 其特性如下
@@ -13,6 +13,14 @@ CrystalM2简称CM2, 是一个用于制作MMORPG的游戏引擎,基于Crystal的2
 4. 基于JavaScirpt的脚本引擎,轻松上手编写多样化,趣味性的功能'
 
 5. 数据库支持SQL,兼容性,稳定性强,易于拓展'
+
+### 脚本系统
+
+#### 服务端
+[脚本说明书](https://github.com/CrystalMir2/CrystalMir-Wiki/blob/main/CrystalM2/CrystalM2Script.md)
+
+#### 客户端
+[脚本说明书](https://github.com/CrystalMir2/CrystalMir-Wiki/blob/main/CrystalM2/CrystalUnityClientt.md)
 
 截图如下:
 
