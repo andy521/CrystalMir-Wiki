@@ -1,6 +1,41 @@
 ### CrystalM2Script
 
 CrystalM2的脚本系统
+## 触发与特效
+在技能开始和命中时, 脚本中播放额外的特效动画
+
+![image](https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/234af8b9-777e-4848-a3ed-a973136edcce)
+
+
+### 技能触发
+
+#### 远程技能的开始和命中
+```javascript
+function QFunction$MagicBegin(magic) {
+
+    //自身特效
+    //string libraryName, int index,int imgCount, int interval,int replayCount,int delay
+    ctx.playSelfEffect("Magic3",1880,10,100,0,0)//lib名必须正确.大小写敏感
+    var say = `MagicBegin Spell:${magic.spell}`;
+    ctx.sendMsg(6,say);
+    return false;
+    // return true;//返回ture.则会中断施法
+}
+function QFunction$MagicAttack(magic,target) {
+    //目标命中特效
+    //uint targetObjectID,string libraryName, int index,int imgCount, int interval,int replayCount,int delay
+    if (target!=null)//判断是否命中目标
+        ctx.playObjectEffect(target.ObjectID,"Monster/459",100,11,100,0,0)//lib名必须正确.大小写敏感
+
+    var say = `MagicAttack:Spell:${magic.spell},target:${target.Info.Name},ObjectID:${target.ObjectID}`;
+    ctx.sendMsg(6,say);
+    return "";
+}
+
+```
+
+
+
 
 ## 物品
 针对背包,仓库,装备栏等位置的物品进行脚本操作,如查询,删除,增加,修改等
@@ -92,6 +127,74 @@ function 全身修复(){
     ctx.repairAll()
     return `<返回/@GM$GM_Test$Main>`;
 }
+```
+
+#### 物品使用触发
+
+客户都安使用背包中的物品触发脚本
+根据所使用的物品属性,如名字:`name`,别名:`friendlyName`,类型:`shape`),可动态的自定义道具的功能
+
+```javascript
+function QFunction$UseItem() {
+    return 双击触发$双击触发$Main(arguments[0],arguments[1],arguments[2],arguments[3]);
+}
+
+function 双击触发$双击触发$Main(id,shape,name,friendlyName) {
+    console.log("[双击触发] shape name,friendlyName:",shape,name,friendlyName);
+    var say = '';
+    ctx.sendMsg(1,String.format('[双击触发]id {0},shape {1}, name {2},friendlyName {3} ',id,shape,name,friendlyName));
+
+    switch (shape){
+        case 1:
+            say+= 双击触发$测试卷轴();
+            break
+        case 3:
+            say+= '您的等级{'+ctx.Level+'#Green},\r\n';
+            say+= 双击触发$双击触发$传送按钮("r001",99,99,);
+            say+=`<传送/@QFunction$双击触发$双击触发$传送(r001,99,99,)>桃源`;
+            say+=`<传送/@QFunction$双击触发$双击触发$传送(N0,329,264,)>比奇`;
+            say+=`<传送/@QFunction$双击触发$双击触发$传送(3,333,333,)>盟重`;
+            say+=`<传送/@QFunction$双击触发$双击触发$传送(r001,99,99,)>GM`;
+            break
+        case 4://神秘卷轴
+            ctx.remob('白野猪',3,7);
+            ctx.giveGold(1000000);
+            ctx.give('屠龙',1);
+            ctx.giveCredit(100);
+            ctx.givePearls(200);
+            ctx.giveSkill("HalfMoon",3);
+            ctx.repairAll();
+            break
+        case 14://金条
+            ctx.giveGold(1000000);
+            break
+        case 15://金砖
+            ctx.giveGold(5000000);
+            break
+        case 16://金盒
+            ctx.giveGold(10000000);
+            break
+        case 17://修复神锤
+            ctx.repairAll();
+            break;
+        case 18://便捷服务
+            var server = '{便捷服务#red}:\r\n'
+            say+= '<寄售/@QFunction$Market()> ';
+            say+= '<买卖/@QFunction$SellBuy()> ';
+            say+= '<锻造/@QFunction$Refine()> ';
+            say+= '<仓库/@QFunction$showStorage()> ';
+            return say;
+        case 10000://自定义
+            ctx.remob(friendlyName.split("-")[1],14400);
+            break
+        case 10001://自定义
+            ctx.give(name.split("-")[1],1);
+            break
+    }
+    return say;
+}
+
+
 ```
 
 ## 数据存储
