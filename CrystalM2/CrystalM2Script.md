@@ -315,3 +315,33 @@ function 每日变量(){
     return ``;
 }
 ```
+
+## 货币
+
+#### 查看及修改
+
+货币分为多种,支持有:金币,元宝,珍珠,其范围为0:~uint.Max
+
+- CurrencyType.GOLD
+- CurrencyType.CREDIT
+- CurrencyType.PEARLS
+
+但改变的数量为 `负数(-)`, 则减少, 正数为增加
+
+```javascript
+function 改变金币元宝珍珠(){
+
+    var gold = ctx.getCurrency(CurrencyType.GOLD);
+    var credit = ctx.getCurrency(CurrencyType.CREDIT);
+    var pearls = ctx.getCurrency(CurrencyType.PEARLS);
+
+    gold>1000?ctx.setCurrency(CurrencyType.GOLD,-100):ctx.setCurrency(CurrencyType.GOLD,100);
+    credit>1000?ctx.setCurrency(CurrencyType.CREDIT,-100):ctx.setCurrency(CurrencyType.CREDIT,100);
+    pearls>1000?ctx.setCurrency(CurrencyType.PEARLS,-100):ctx.setCurrency(CurrencyType.PEARLS,100);
+
+    var say=`金币:${gold},元宝:${credit},珍珠:${pearls}\\`
+    say+=appendBackBtn();
+
+    return say
+}
+```
