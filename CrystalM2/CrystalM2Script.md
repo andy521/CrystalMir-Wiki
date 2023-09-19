@@ -341,7 +341,56 @@ function 改变金币元宝珍珠(){
 
     var say=`金币:${gold},元宝:${credit},珍珠:${pearls}\\`
     say+=appendBackBtn();
-
     return say
 }
 ```
+
+## 装备属性
+
+### 自定义装备属性
+
+利用脚本,为装备添加自定义的属性,类似暗黑中的词条
+
+- 单件装备支持无限个属性, 每条属性可支持存储20个值
+- 可通过脚本对词条的名称命名,以及文字,颜色排版
+
+
+![image](https://github.com/CrystalMir2/CrystalMir-Wiki/assets/143333779/a663b823-57e4-4571-bb93-3c03ac78755a)
+
+```JavaScript
+
+function 自定义属性(){
+    if(!ctx.checkItemW("乌木剑",1)){return "没有佩戴乌木剑"+appendBackBtn();}
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,0,111);
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,1,222);
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,2,333);
+
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,0,1111);
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,1,1222);
+    ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,2,1333);
+    return "自定义属性"+appendBackBtn();
+}
+
+
+```
+
+### 修改装备附加属性
+
+附加属性就是通常所说的极品属性, 
+
+打怪掉落的装备会爆极品,指的就是附加属性
+
+- 服务端可以配置掉落极品的规则
+- 可通过脚本修改现有装备的附加属性
+- 附加属性不仅是功魔道,还有HP,MP,吸血,吸蓝,暴击,魔抗等很多种类
+
+  ```JavaScript
+function 附加属性(){
+    if(!ctx.checkItemW("乌木剑",1)){return "没有佩戴乌木剑"+appendBackBtn();}
+    ctx.changeItemAddStats(ItemPostionType.Equipment,0,"MaxDC",99);
+    ctx.changeItemAddStats(ItemPostionType.Equipment,0,"MaxMC",9999);
+    ctx.changeItemAddStats(ItemPostionType.Equipment,0,"MaxSC",999999);
+}
+
+```
+
