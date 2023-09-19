@@ -361,10 +361,11 @@ function 改变金币元宝珍珠(){
 
 function 自定义属性(){
     if(!ctx.checkItemW("乌木剑",1)){return "没有佩戴乌木剑"+appendBackBtn();}
+    //第1条属性
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,0,111);
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,1,222);
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,0,0,2,333);
-
+    //第2条属性
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,0,1111);
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,1,1222);
     ctx.changeItemCustomProperty(ItemPostionType.Equipment,0,1,1,2,1333);
@@ -384,7 +385,7 @@ function 自定义属性(){
 - 可通过脚本修改现有装备的附加属性
 - 附加属性不仅是功魔道,还有HP,MP,吸血,吸蓝,暴击,魔抗等很多种类
 
-  ```JavaScript
+```JavaScript
 function 附加属性(){
     if(!ctx.checkItemW("乌木剑",1)){return "没有佩戴乌木剑"+appendBackBtn();}
     ctx.changeItemAddStats(ItemPostionType.Equipment,0,"MaxDC",99);
