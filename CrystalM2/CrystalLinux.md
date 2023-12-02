@@ -168,7 +168,7 @@ dotnet restore --verbosity normal
         <add key="NuGet Offline Repository" value=".\Packages" />
 ```
 to (为)
-````
+
 ``` xml
         <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
         <!-- <add key="NuGet Offline Repository" value="./Packages" /> -->
