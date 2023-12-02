@@ -79,7 +79,11 @@ cd mir2
 ```
 
 #### console
-create console tempetle
+
+We have to create console application, case by Winform Not supported on Linux.
+
+我们必须创建控制台应用程序，在 Linux 上不支持 Winform。
+
 The console project template creates a simple application that displays `"Hello, World"`
 in the console window by calling the `Console.WriteLine(String)` method in Program.cs.
 项目模板通过调用 Program.cs 中的 Console.WriteLine（String） 方法，
