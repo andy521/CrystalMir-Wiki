@@ -110,3 +110,62 @@ dotnet publish --configuration Release
 #Hello, World!
 ```
 
+编辑 Console.csproj 文件, 关联Server Library porject 的源代码
+
+Edit the `Console.csproj` file to associate the source code of the Server Library porject.
+
+``` shell
+gedit  MirServerConsole.csproj
+```
+
+```xml
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <SatelliteResourceLanguages>Chinese</SatelliteResourceLanguages> 
+        <OutputPath>..\Build\Server</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath> 
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath> 
+
+        
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Server\Server.Library.csproj" />
+      <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="log4net" Version="2.0.15" />
+    </ItemGroup>
+
+</Project>
+
+```
+
+#### nuget restore 
+
+使用nuget 更新以来包
+
+```shell
+dotnet restore
+
+```
+
+#### publish and run again
+
+再一次编译,发布并运行二进制
+
+``` shell
+dotnet publish --configuration Release
+./bin/Release/net7.0/MirServerConsole
+```
+
+
+Good luck 
+
+----
+> QQ Group: 714472073
