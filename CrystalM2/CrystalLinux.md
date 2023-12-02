@@ -2,6 +2,8 @@
 
 install Crystal  mir server  on linux 
 
+在Linux上发布Craystal Mir 服务器
+
 ### .Net7
 #### install
 install .net 7 sdK on ubuntu 20.04 lts x64
@@ -101,9 +103,10 @@ dotnet run --project  MirServerConsole.csproj
 #Hello, World!
 ```
 
-#### publish and run
+#### publish and run 
 ```shell
 dotnet publish --configuration Release
 ./bin/Release/net7.0/MirServerConsole
 #Hello, World!
 ```
+
