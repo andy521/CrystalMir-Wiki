@@ -9,10 +9,12 @@ install .net 7 sdK on ubuntu 20.04 lts x64
 Installing with APT can be done with a few commands. Before you install .NET, 
 run the following commands to add the Microsoft package signing key 
 to your list of trusted keys and add the package repository.
+
 使用 APT 安装可以通过几个命令完成。在安装 .NET 之前，
 请运行以下命令，将 Microsoft 包签名密钥添加到受信任密钥列表并添加包存储库。
 
 Open a terminal and run the following commands:
+
 打开终端并运行以下命令：
 
 ```shell
@@ -31,6 +33,7 @@ sudo apt-get install -y dotnet-sdk-7.0
 
 Use the dotnet --list-sdks and dotnet --list-runtimes commands to see which versions are installed. 
 For more information, see How to check that .NET is already installed.
+
 使用 dotnet --list-sdks and dotnet --list-runtimes 命令查看安装了哪些版本。
 有关详细信息，请参阅如何检查是否已安装 .NET。
 
@@ -86,6 +89,7 @@ We have to create console application, case by Winform Not supported on Linux.
 
 The console project template creates a simple application that displays `"Hello, World"`
 in the console window by calling the `Console.WriteLine(String)` method in Program.cs.
+
 项目模板通过调用 Program.cs 中的 Console.WriteLine（String） 方法，
 创建一个简单的应用程序，该应用程序在控制台窗口中显示“Hello， World”。
 
