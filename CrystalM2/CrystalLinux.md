@@ -1,10 +1,10 @@
-## Crystal on Linux
+# Crystal on Linux
 
 install Crystal  mir server  on linux 
 
 在Linux上发布Craystal Mir 服务器
 
-### .Net7
+## .Net7
 #### install
 install .net 7 sdK on ubuntu 20.04 lts x64
 
@@ -50,7 +50,7 @@ get help or install other versions
 [Other Version](https://learn.microsoft.com/en-us/dotnet/core/install/linux)
 
 
-### IDE(optional)
+## IDE(optional)
 install `rider` or `vs code` for developer (optional)
 
 #### rider download
@@ -72,7 +72,7 @@ java -version
 #### vscode 
 [link](https://learn.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-7-0)
 
-### build 
+## build 
 
 #### source code
 git clone(download) source code
