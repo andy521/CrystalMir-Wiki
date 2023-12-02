@@ -5,7 +5,7 @@ install Crystal  mir server  on linux
 ubuntu 20.04 lts x64
 
 ### .Net 7
-install .net 7 sdk
+####install .net 7 sdk
 
 Installing with APT can be done with a few commands. Before you install .NET, 
 run the following commands to add the Microsoft package signing key 
@@ -17,12 +17,27 @@ Open a terminal and run the following commands:
 打开终端并运行以下命令：
 
 ```shell
-# add signing key for 
+#add signing key for 
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
-# install sdk 
+#install sdk 
 sudo apt-get update 
 sudo apt-get install -y dotnet-sdk-7.0
+
 ```
+
+#### check .net 7 sdk
+
+Use the dotnet --list-sdks and dotnet --list-runtimes commands to see which versions are installed. For more information, see How to check that .NET is already installed.
+使用 dotnet --list-sdks and dotnet --list-runtimes 命令查看安装了哪些版本。有关详细信息，请参阅如何检查是否已安装 .NET。
+
+```shell
+dotnet --list-sdks
+
+```
+#### FAQ 
+get help or install other versions
+[Help](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-2004)
+[Other Version](https://learn.microsoft.com/en-us/dotnet/core/install/linux)
