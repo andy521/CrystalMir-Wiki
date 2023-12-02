@@ -148,11 +148,37 @@ gedit  MirServerConsole.csproj
 
 #### nuget restore 
 
-使用nuget 更新以来包
+使用nuget 更新依赖包
 
 ```shell
-dotnet restore
 
+dotnet restore --verbosity normal
+
+```
+
+如果遇到如下错误, 
+
+```txt
+ error NU1301: The local source '/home/xxxx/xxxx/mir2-source/.\Packages' doesn't exist.
+```
+
+修改./NuGet.config中的
+``` xml
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+        <add key="NuGet Offline Repository" value=".\Packages" />
+```
+to (为)
+````
+``` xml
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+        <!-- <add key="NuGet Offline Repository" value="./Packages" /> -->
+```
+
+重建nuget配置文件:
+
+```shell
+dotnet new nugetconfig
+dotnet restore
 ```
 
 #### publish and run again
